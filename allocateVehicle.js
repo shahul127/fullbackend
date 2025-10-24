@@ -37,7 +37,7 @@ async function allocateVehicle(client, orderId) {
         deliveryDate.setDate(startDate.getDate() + 2);
 
         await client.query(
-            `INSERT INTO dispatches (order_id, vehicle_number, driver_id, start_date, delivery_date)
+            `INSERT INTO dispatches (order_id, vehicle_number, driver_id, start_date, delivered_date)
             VALUES ($1, $2, $3, $4, $5)`,
             [orderId, vehicleNumber, driverId, startDate, deliveryDate]
         );
